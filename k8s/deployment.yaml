@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jio-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jio-app
+  template:
+    metadata:
+      labels:
+        app: jio-app
+    spec:
+      containers:
+      - name: jio-container
+        image: aay6827/jio-devops-platform:latest
+        ports:
+        - containerPort: 5000
+        
